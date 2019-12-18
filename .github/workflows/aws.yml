@@ -1,6 +1,16 @@
 name: CI
 
-on: [release]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      - master         # Push events on master branch
+      - dev           
+      - uat             
+    # Sequence of patterns matched against refs/tags
+    tags:        
+      - v1             # Push events to v1 tag
+      - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
 env:
     AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
@@ -19,4 +29,4 @@ jobs:
       run: |
         echo Add other actions to build,
         echo Start AWS codepipline.
-
+        aws codepipeline start-pipeline-execution --name tel-uat-admin-backend
