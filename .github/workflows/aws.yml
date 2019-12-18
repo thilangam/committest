@@ -12,10 +12,6 @@ on:
       - v1             # Push events to v1 tag
       - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
-env:
-    AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 jobs:
   build:
 
@@ -33,3 +29,8 @@ jobs:
         aws codepipeline start-pipeline-execution --name tel-uat-auth-service
         aws codepipeline start-pipeline-execution --name tel-uat-front-end
         aws codepipeline start-pipeline-execution --name tel-uat-job-service
+
+    env:
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
