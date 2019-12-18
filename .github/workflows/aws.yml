@@ -1,6 +1,6 @@
 name: CI
 
-on: [create,push,release]
+on: [create,release]
 
 env:
     AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
