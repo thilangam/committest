@@ -30,3 +30,6 @@ jobs:
         echo Add other actions to build,
         echo Start AWS codepipline.
         aws codepipeline start-pipeline-execution --name tel-uat-admin-backend
+        aws codepipeline start-pipeline-execution --name tel-uat-auth-service
+        aws codepipeline start-pipeline-execution --name tel-uat-front-end
+        aws codepipeline start-pipeline-execution --name tel-uat-job-service
