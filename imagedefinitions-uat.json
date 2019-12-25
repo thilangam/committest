@@ -1,0 +1,6 @@
+[
+    {
+        "name": "admin-backend",
+        "imageUri": "311088082811.dkr.ecr.eu-west-2.amazonaws.com/admin-backend:latest"
+        }
+    ]
